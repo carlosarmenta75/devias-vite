@@ -6,13 +6,24 @@ import { useColorScheme } from "@mui/material/styles";
 
 import { NoSsr } from "@/components/core/no-ssr";
 
-const HEIGHT = 60;
-const WIDTH = 60;
+const HEIGHT = 40;
+const WIDTH = 40;
 
 export function Logo({ color = "dark", emblem, height = HEIGHT, width = WIDTH }) {
 	const url = "/assets/image.png";
 
-	return <Box alt="ImolaSolutions logo" component="img" height={height} src={url} width={width} />;
+	return (
+		<Box
+			alt="ImolaSolutions logo"
+			component="img"
+			src={url}
+			sx={{
+				height: height,
+				width: height,
+				objectFit: "contain",
+			}}
+		/>
+	);
 }
 
 export function DynamicLogo({ colorDark = "light", colorLight = "dark", height = HEIGHT, width = WIDTH, ...props }) {
