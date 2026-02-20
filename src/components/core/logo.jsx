@@ -10,15 +10,9 @@ const HEIGHT = 60;
 const WIDTH = 60;
 
 export function Logo({ color = "dark", emblem, height = HEIGHT, width = WIDTH }) {
-	let url;
+	const url = "/assets/image.png";
 
-	if (emblem) {
-		url = color === "light" ? "/assets/logo-emblem.svg" : "/assets/logo-emblem--dark.svg";
-	} else {
-		url = color === "light" ? "/assets/logo.svg" : "/assets/logo--dark.svg";
-	}
-
-	return <Box alt="logo" component="img" height={height} src={url} width={width} />;
+	return <Box alt="ImolaSolutions logo" component="img" height={height} src={url} width={width} />;
 }
 
 export function DynamicLogo({ colorDark = "light", colorLight = "dark", height = HEIGHT, width = WIDTH, ...props }) {
