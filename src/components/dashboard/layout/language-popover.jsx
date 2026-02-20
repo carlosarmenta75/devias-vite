@@ -13,13 +13,13 @@ import { useSettings } from "@/components/core/settings/settings-context";
 import { toast } from "@/components/core/toaster";
 
 export const languageFlags = {
-	en: "/assets/flag-uk.svg",
+	en: "/assets/flag-us.svg",
 	de: "/assets/flag-de.svg",
 	es: "/assets/flag-es.svg",
 };
 
 const languageOptions = {
-	en: { icon: "/assets/flag-uk.svg", label: "English" },
+	en: { icon: "/assets/flag-us.svg", label: "English" },
 	de: { icon: "/assets/flag-de.svg", label: "German" },
 	es: { icon: "/assets/flag-es.svg", label: "Spanish" },
 };

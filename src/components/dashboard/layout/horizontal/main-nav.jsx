@@ -213,9 +213,9 @@ function LanguageSwitch() {
 
 const user = {
 	id: "USR-000",
-	name: "Sofia Rivers",
-	avatar: "/assets/avatar.png",
-	email: "sofia@devias.io",
+	name: "Carlos Armenta",
+	avatar: "/assets/pro-CfDga4hW.jpeg",
+	email: "carlos@imolasolutions.com",
 };
 
 function UserButton() {
