@@ -1,5 +1,8 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardHeader from "@mui/material/CardHeader";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -8,11 +11,34 @@ import { Helmet } from "react-helmet-async";
 
 import { appConfig } from "@/config/app";
 import { paths } from "@/paths";
+import { dayjs } from "@/lib/dayjs";
+import { ActivityTimeline } from "@/components/core/activity-timeline";
 import { RouterLink } from "@/components/core/link";
 import { ContactForm } from "@/components/marketing/contact/contact-form";
 import { Customers } from "@/components/marketing/contact/customers";
 
 const metadata = { title: `Contact | ${appConfig.name}` };
+
+const recentActivities = [
+	{
+		title: "Inquiry submitted",
+		timestamp: dayjs().subtract(10, "minute").toDate(),
+		description: "New contact form submission received",
+		color: "success",
+	},
+	{
+		title: "Form opened",
+		timestamp: dayjs().subtract(15, "minute").toDate(),
+		description: "Contact page visited",
+		color: "primary",
+	},
+	{
+		title: "Email verified",
+		timestamp: dayjs().subtract(30, "minute").toDate(),
+		description: "Email address confirmed",
+		color: "primary",
+	},
+];
 
 export function Page() {
 	return (
@@ -72,6 +98,12 @@ export function Page() {
 						<Stack spacing={3}>
 							<Typography variant="h6">Fill the form below</Typography>
 							<ContactForm />
+							<Card>
+								<CardHeader title="Recent Activity" />
+								<CardContent>
+									<ActivityTimeline activities={recentActivities} />
+								</CardContent>
+							</Card>
 						</Stack>
 					</Box>
 				</Box>
