@@ -1,5 +1,6 @@
 import { AddressBookIcon } from "@phosphor-icons/react/dist/ssr/AddressBook";
 import { AlignLeftIcon } from "@phosphor-icons/react/dist/ssr/AlignLeft";
+import { BuildingsIcon } from "@phosphor-icons/react/dist/ssr/Buildings";
 import { CalendarCheckIcon } from "@phosphor-icons/react/dist/ssr/CalendarCheck";
 import { ChartPieIcon } from "@phosphor-icons/react/dist/ssr/ChartPie";
 import { ChatsCircleIcon } from "@phosphor-icons/react/dist/ssr/ChatsCircle";
@@ -48,6 +49,7 @@ export const icons = {
 	"sign-out": SignOutIcon,
 	"text-align-left": TextAlignLeftIcon,
 	"warning-diamond": WarningDiamondIcon,
+	buildings: BuildingsIcon,
 	cube: CubeIcon,
 	file: FileIcon,
 	gear: GearIcon,
