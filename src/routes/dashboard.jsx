@@ -164,6 +164,32 @@ export const route = {
 			},
 		},
 		{
+			path: "organizations",
+			children: [
+				{
+					index: true,
+					lazy: async () => {
+						const { Page } = await import("@/pages/dashboard/organizations/list");
+						return { Component: Page };
+					},
+				},
+				{
+					path: "create",
+					lazy: async () => {
+						const { Page } = await import("@/pages/dashboard/organizations/create");
+						return { Component: Page };
+					},
+				},
+				{
+					path: ":organizationId",
+					lazy: async () => {
+						const { Page } = await import("@/pages/dashboard/organizations/details");
+						return { Component: Page };
+					},
+				},
+			],
+		},
+		{
 			path: "file-storage",
 			lazy: async () => {
 				const { Page } = await import("@/pages/dashboard/file-storage");

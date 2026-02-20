@@ -26,6 +26,16 @@ export const dashboardConfig = {
 					matcher: { type: "startsWith", href: "/dashboard/settings" },
 				},
 				{
+					key: "organizations",
+					title: "Organizations",
+					icon: "buildings",
+					items: [
+						{ key: "organizations", title: "List organizations", href: paths.dashboard.organizations.list },
+						{ key: "organizations:create", title: "Create organization", href: paths.dashboard.organizations.create },
+						{ key: "organizations:details", title: "Organization details", href: paths.dashboard.organizations.details("1") },
+					],
+				},
+				{
 					key: "customers",
 					title: "Customers",
 					icon: "users",
