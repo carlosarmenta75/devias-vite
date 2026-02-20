@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 import { Page as HomePage } from "@/pages/marketing/home";
 import { Page as NotFoundPage } from "@/pages/not-found";
@@ -10,7 +10,9 @@ import { route as componentsRoute } from "./components";
 import { route as dashboardRoute } from "./dashboard";
 
 export const routes = [
+	{ index: true, element: <Navigate to="/dashboard" replace /> },
 	{
+		path: "marketing",
 		element: (
 			<MarketingLayout>
 				<Outlet />
