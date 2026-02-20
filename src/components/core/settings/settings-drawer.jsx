@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import { ArrowCounterClockwiseIcon } from "@phosphor-icons/react/dist/ssr/ArrowCounterClockwise";
 import { XIcon } from "@phosphor-icons/react/dist/ssr/X";
 
+import { OptionsCaliforniaTheme } from "./options-california-theme";
 import { OptionsColorScheme } from "./options-color-scheme";
 import { OptionsDirection } from "./options-direction";
 import { OptionsLayout } from "./options-layout";
@@ -51,6 +52,12 @@ export function SettingsDrawer({ canReset = true, onClose, onUpdate, onReset, op
 				</Stack>
 			</Stack>
 			<Stack spacing={5} sx={{ overflowY: "auto", p: 3 }}>
+				<OptionsCaliforniaTheme
+					onChange={(value) => {
+						handleChange("californiaTheme", value);
+					}}
+					value={values.californiaTheme}
+				/>
 				<OptionsPrimaryColor
 					onChange={(value) => {
 						handleChange("primaryColor", value);

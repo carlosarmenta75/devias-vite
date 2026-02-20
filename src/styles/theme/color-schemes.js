@@ -12,96 +12,50 @@ import {
 	stormGrey,
 	tomatoOrange,
 } from "./colors";
+import { californiaPrimaryColors } from "./california-themes";
+
+function createPrimaryScheme(colorPalette) {
+	return {
+		dark: {
+			...colorPalette,
+			light: colorPalette[300],
+			main: colorPalette[400],
+			dark: colorPalette[500],
+			contrastText: "var(--mui-palette-common-black)",
+			activated: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-activatedOpacity))",
+			hovered: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-hoverOpacity))",
+			selected: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-selectedOpacity))",
+		},
+		light: {
+			...colorPalette,
+			light: colorPalette[400],
+			main: colorPalette[500],
+			dark: colorPalette[600],
+			contrastText: "var(--mui-palette-common-white)",
+			activated: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-activatedOpacity))",
+			hovered: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-hoverOpacity))",
+			selected: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-selectedOpacity))",
+		},
+	};
+}
 
 const primarySchemes = {
-	chateauGreen: {
-		dark: {
-			...chateauGreen,
-			light: chateauGreen[300],
-			main: chateauGreen[400],
-			dark: chateauGreen[500],
-			contrastText: "var(--mui-palette-common-black)",
-			activated: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-activatedOpacity))",
-			hovered: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-hoverOpacity))",
-			selected: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-selectedOpacity))",
-		},
-		light: {
-			...chateauGreen,
-			light: chateauGreen[400],
-			main: chateauGreen[500],
-			dark: chateauGreen[600],
-			contrastText: "var(--mui-palette-common-white)",
-			activated: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-activatedOpacity))",
-			hovered: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-hoverOpacity))",
-			selected: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-selectedOpacity))",
-		},
-	},
-	neonBlue: {
-		dark: {
-			...neonBlue,
-			light: neonBlue[300],
-			main: neonBlue[400],
-			dark: neonBlue[500],
-			contrastText: "var(--mui-palette-common-black)",
-			activated: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-activatedOpacity))",
-			hovered: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-hoverOpacity))",
-			selected: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-selectedOpacity))",
-		},
-		light: {
-			...neonBlue,
-			light: neonBlue[400],
-			main: neonBlue[500],
-			dark: neonBlue[600],
-			contrastText: "var(--mui-palette-common-white)",
-			activated: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-activatedOpacity))",
-			hovered: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-hoverOpacity))",
-			selected: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-selectedOpacity))",
-		},
-	},
-	royalBlue: {
-		dark: {
-			...royalBlue,
-			light: royalBlue[300],
-			main: royalBlue[400],
-			dark: royalBlue[500],
-			contrastText: "var(--mui-palette-common-black)",
-			activated: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-activatedOpacity))",
-			hovered: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-hoverOpacity))",
-			selected: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-selectedOpacity))",
-		},
-		light: {
-			...royalBlue,
-			light: royalBlue[400],
-			main: royalBlue[500],
-			dark: royalBlue[600],
-			contrastText: "var(--mui-palette-common-white)",
-			activated: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-activatedOpacity))",
-			hovered: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-hoverOpacity))",
-			selected: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-selectedOpacity))",
-		},
-	},
-	tomatoOrange: {
-		dark: {
-			...tomatoOrange,
-			light: tomatoOrange[300],
-			main: tomatoOrange[400],
-			dark: tomatoOrange[500],
-			contrastText: "var(--mui-palette-common-black)",
-			activated: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-activatedOpacity))",
-			hovered: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-hoverOpacity))",
-			selected: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-selectedOpacity))",
-		},
-		light: {
-			...tomatoOrange,
-			light: tomatoOrange[400],
-			main: tomatoOrange[500],
-			dark: tomatoOrange[600],
-			contrastText: "var(--mui-palette-common-white)",
-			activated: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-activatedOpacity))",
-			hovered: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-hoverOpacity))",
-			selected: "rgba(var(--mui-palette-primary-mainChannel) / var(--mui-palette-action-selectedOpacity))",
-		},
-	},
+	chateauGreen: createPrimaryScheme(chateauGreen),
+	neonBlue: createPrimaryScheme(neonBlue),
+	royalBlue: createPrimaryScheme(royalBlue),
+	tomatoOrange: createPrimaryScheme(tomatoOrange),
+	oceanside: createPrimaryScheme(californiaPrimaryColors.oceanside),
+	delta: createPrimaryScheme(californiaPrimaryColors.delta),
+	eureka: createPrimaryScheme(californiaPrimaryColors.eureka),
+	sacramento: createPrimaryScheme(californiaPrimaryColors.sacramento),
+	mono: createPrimaryScheme(californiaPrimaryColors.mono),
+	orangeCounty: createPrimaryScheme(californiaPrimaryColors.orangeCounty),
+	santaBarbara: createPrimaryScheme(californiaPrimaryColors.santaBarbara),
+	santaCruz: createPrimaryScheme(californiaPrimaryColors.santaCruz),
+	shasta: createPrimaryScheme(californiaPrimaryColors.shasta),
+	sierra: createPrimaryScheme(californiaPrimaryColors.sierra),
+	trinity: createPrimaryScheme(californiaPrimaryColors.trinity),
+	pasoRobles: createPrimaryScheme(californiaPrimaryColors.pasoRobles),
 };
 
 export function colorSchemes(config) {

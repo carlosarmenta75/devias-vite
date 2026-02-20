@@ -12,7 +12,8 @@ function CustomThemeProvider({ children }) {
 	const { settings } = useSettings();
 
 	const direction = settings.direction ?? appConfig.direction;
-	const primaryColor = settings.primaryColor ?? appConfig.primaryColor;
+	const californiaTheme = settings.californiaTheme;
+	const primaryColor = californiaTheme || settings.primaryColor || appConfig.primaryColor;
 
 	const theme = createTheme({ direction, primaryColor });
 

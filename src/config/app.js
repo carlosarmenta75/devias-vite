@@ -8,7 +8,8 @@ export const appConfig = {
 	language: "en",
 	theme: "light",
 	themeColor: "#090a0b",
-	primaryColor: "neonBlue",
+	primaryColor: "oceanside",
+	californiaTheme: "oceanside",
 	logLevel: import.meta.env.VITE_LOG_LEVEL || LogLevel.ALL,
 	authStrategy: import.meta.env.VITE_AUTH_STRATEGY || AuthStrategy.NONE,
 };
