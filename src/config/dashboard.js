@@ -46,6 +46,16 @@ export const dashboardConfig = {
 					],
 				},
 				{
+					key: "incidents",
+					title: "Incidents",
+					icon: "shield-warning",
+					items: [
+						{ key: "incidents", title: "List incidents", href: paths.dashboard.incidents.list },
+						{ key: "incidents:create", title: "Create incident", href: paths.dashboard.incidents.create },
+						{ key: "incidents:details", title: "Incident details", href: paths.dashboard.incidents.details("1") },
+					],
+				},
+				{
 					key: "products",
 					title: "Products",
 					icon: "shopping-bag-open",

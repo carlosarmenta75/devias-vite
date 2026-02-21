@@ -69,6 +69,11 @@ export const paths = {
 			create: "/dashboard/customers/create",
 			details: (customerId) => `/dashboard/customers/${customerId}`,
 		},
+		incidents: {
+			list: "/dashboard/incidents",
+			create: "/dashboard/incidents/create",
+			details: (incidentId) => `/dashboard/incidents/${incidentId}`,
+		},
 		organizations: {
 			list: "/dashboard/organizations",
 			create: "/dashboard/organizations/create",
